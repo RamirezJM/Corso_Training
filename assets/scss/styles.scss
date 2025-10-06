@@ -1,0 +1,21 @@
+// Font
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+// Colors
+$primary: #f8b547;
+$secondary: #35353a;
+$light: #fbf9f5;
+$body-bg: $light;
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.header{
+  background: linear-gradient(to bottom right, rgba(0,0,0,.8), rgba(0,0,0,.8)),
+  url('../images/header-background.jpg') no-repeat center/cover;
+  
+}
+
+.invitation{
+  background: $secondary url('../images/invitation-background.jpg') no-repeat center/cover;
+  background-blend-mode: multiply;
+}

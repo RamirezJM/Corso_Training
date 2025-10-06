@@ -1,17 +1,24 @@
-module.exports = {
+
+
+import autoprefixer from 'autoprefixer';
+import purgecssLib from '@fullhuman/postcss-purgecss';
+const purgecss = purgecssLib.default;
+
+
+export default {
   plugins: [
-    require('autoprefixer'),
-    require('@fullhuman/postcss-purgecss')({  // <--- LLAMAR la función directamente
+    autoprefixer,
+    purgecss({
       content: [
-        './**/*.html',
-        './assets/js/**/*.js'
+        './*.html',
+        './assets/js/**/*.js',
       ],
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: {
+       safelist: {
         standard: ['collapse', 'collapsing', 'show', 'carousel', 'carousel-item', 'active', 'slide'],
         deep: [],
         greedy: []
-      }
-    })
-  ]
-}
+      },
+    }),
+  ],
+};
